@@ -24,12 +24,13 @@ import random
 digits = list(range(10))
 random.shuffle(digits)
 print(digits[:3])
-numero=""+str(digits[0])+str(digits[1])+str(digits[2])
+#numero=""+str(digits[0])+str(digits[1])+str(digits[2])
+numero = "023"
 print(numero)
 guess=""
 
 while( not( str( guess ) == numero ) ):
-    guess = str( input("Cual es tu suposicion? ") )
+    guess = str( raw_input("Cual es tu suposicion? ") )
     print(guess)
     primero = ( str(guess)[0] == numero[0] ) or ( str(guess)[0] == numero[1] ) or ( str(guess)[0] == numero[2] )
     segundo = ( str(guess)[1] == numero[0] ) or ( str(guess)[1] == numero[1] ) or ( str(guess)[1] == numero[2] )

@@ -22,6 +22,11 @@
 
 def arrayCheck(nums):
     # CODIGO AQUI
+    for i in range(len(nums) - 2):
+        if ( (nums[i] == 1) and (nums[i+1] == 1) and (nums[i+2] == 1) ):
+            return True
+        else:
+            return False
 
 
 ######################
@@ -39,6 +44,10 @@ def arrayCheck(nums):
 # stringBits('Heeololeo') -> 'Hello'
 
 def stringBits(str):
+    for i in range(len(str)):
+        if i % 2 == 0:
+            result = result +str[i]
+    return False
   # CODIGO AQUI
 
 
@@ -60,6 +69,9 @@ def stringBits(str):
 
 
 def end_other(a, b):
+    a = a.lower()
+    b = b.lower()
+    return ( ( b.endswith(a) ) or ( a.endswith(b) ) )
   # CODIDGO AQUI
 
 ######################
@@ -76,6 +88,10 @@ def end_other(a, b):
 # doubleChar('Hi-There') -> 'HHii--TThheerree'
 
 def doubleChar(str):
+    result = ''
+    for caract in str:
+        result += caract*2
+    return result
   # CODIGO AQUI
 
 
@@ -99,8 +115,18 @@ def doubleChar(str):
 # no_teen_sum(2, 1, 14) -> 3
 
 def no_teen_sum(a, b, c):
+    a = fix_teen(a)
+    b = fix_teen(b)
+    c = fix_teen(c)
+    print(a+b+c)
   # CODIGO AQUI
 def fix_teen(n):
+    if ( (n > 12) and (n < 20) ):
+        if( (n == 15) or (n == 15) ):
+            return n
+        else:
+            return 0
+    return n
   # CODIGO AQUI
 
 ######################
@@ -116,4 +142,11 @@ def fix_teen(n):
 # count_evens([1, 3, 5]) -> 0
 
 def count_evens(nums):
+
+    count = 0
+
+    for element in nums:
+        if ( element%2 == 0 ):
+            count += 1
+    return count
   # CODIGO AQUI
